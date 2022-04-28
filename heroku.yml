@@ -6,7 +6,7 @@ run:
   web:
     image: web
     command:
-      - cat /app/envoy-server.yaml | envsubst '$PORT' > /app/envoy-server.yaml && /usr/local/bin/envoy --config-path /app/envoy-server.yaml & sleep 1 && /app/bin/server
+      - cat /app/envoy-server.yaml | envsubst '$PORT,$FAKE_VAR' > /app/envoy-server.yaml && /usr/local/bin/envoy --config-path /app/envoy-server.yaml & sleep 1 && /app/bin/server
   worker:
     command:
       - /usr/local/bin/envoy --config-path /app/envoy-client.yaml & sleep 1 && /app/bin/client
