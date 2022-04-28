@@ -6,7 +6,7 @@ run:
   web:
     image: web
     command:
-      - /usr/local/bin/envoy --config-path /app/envoy-server.yaml & sleep 1 && /app/bin/server"
+      - /usr/local/bin/envoy --config-path /app/envoy-server.yaml & sleep 1 && /app/bin/server
   worker:
     command:
       - /usr/local/bin/envoy --config-path /app/envoy-client.yaml & sleep 1 && /app/bin/client
