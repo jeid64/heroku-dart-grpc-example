@@ -28,6 +28,7 @@
                       prefix: "/"
                     route:
                       cluster: echo-grpc
+                      auto_host_rewrite: True
               http_filters:
                 - name: envoy.filters.http.grpc_http1_reverse_bridge
                   typed_config:
