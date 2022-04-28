@@ -51,7 +51,7 @@
                     address: dart-grpc-server.herokuapp.com
                     port_value: 80
     admin:
-      access_log_path: /dev/stdout
+      access_log_path: /app/envoy-clients.logs
       address:
         socket_address:
           address: 127.0.0.1
