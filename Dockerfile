@@ -28,6 +28,8 @@ COPY --from=build /app/example/helloworld/bin/client /app/bin/
 COPY --from=build /app/envoy-client.yaml /app
 COPY --from=build /app/envoy-server.yaml /app
 
+RUN apt-get update && apt-get install gettext -y
+
 # Start server.
 EXPOSE 50051
 #CMD ["/app/example/helloworld/bin/server"]
