@@ -20,7 +20,7 @@ import 'package:helloworld/src/generated/helloworld.pbgrpc.dart';
 Future<void> main(List<String> args) async {
   final channel = ClientChannel(
     'localhost',
-    port: 50051,
+    port: 8444,
     options: ChannelOptions(
       credentials: ChannelCredentials.insecure(),
       codecRegistry:
