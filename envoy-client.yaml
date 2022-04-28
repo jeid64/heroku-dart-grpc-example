@@ -11,9 +11,10 @@
             typed_config:
               "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
               access_log:
-              - name: envoy.access_loggers.stdout
+              - name: envoy.access_loggers.file
                 typed_config:
-                  "@type": type.googleapis.com/envoy.extensions.access_loggers.stream.v3.StdoutAccessLog
+                  "@type": type.googleapis.com/envoy.extensions.access_loggers.stream.v3.FileAccessLog
+                  path: "/app/envoy-client-listener.log"
               codec_type: AUTO
               stat_prefix: ingress_https
               route_config:
@@ -51,7 +52,7 @@
                     address: dart-grpc-server.herokuapp.com
                     port_value: 80
     admin:
-      access_log_path: /app/envoy-clients.logs
+      access_log_path: /app/envoy-client-admin.log
       address:
         socket_address:
           address: 127.0.0.1
